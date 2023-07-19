@@ -6,6 +6,7 @@ export const errorHandlerMiddleware: ErrorRequestHandler = async (err, req, res,
   const statusCode = err.statusCode || 500;
   return res.status(statusCode).json({
     status: statusCode,
-    message: "Something went wrong, Please try again later",
+    name: err.name,
+    message: err.message,
   });
 };

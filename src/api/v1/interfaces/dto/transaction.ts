@@ -1,6 +1,13 @@
 export interface WithdrawDto {
-  amount: number;
   transactionId: string;
+  amount: number;
+  utr: string;
+  type: string;
+}
+
+export interface DepositDto {
+  transactionId: string;
+  amount: number;
   utr: string;
   type: string;
 }

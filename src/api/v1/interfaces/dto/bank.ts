@@ -5,6 +5,5 @@ export interface BankDto {
   type: string;
   ifsc: string;
   currentBalance: number;
-  status: boolean;
-  usedFor: string;
+  usedFor?: string;
 }

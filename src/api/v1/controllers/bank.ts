@@ -13,3 +13,13 @@ export const createBank = async (req: Request, res: Response) => {
     bank,
   });
 };
+
+export const getBanks = async (req: Request, res: Response) => {
+  const banks = await Bank.find();
+
+  return res.status(200).json({
+    status: 200,
+    message: "Banks retrieved successfully",
+    banks,
+  });
+};

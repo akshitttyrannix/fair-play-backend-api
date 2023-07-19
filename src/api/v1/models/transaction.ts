@@ -62,11 +62,6 @@ const transactionSchema = new mongoose.Schema({
   ...timeStampSchema,
 });
 
-transactionSchema.pre("save", function (next) {
-  console.log(`transaction with ID "${this.transactionId}" is being saved`);
-  next();
-});
-
 transactionSchema.post("save", function (doc, next) {
   console.log(`transaction with ID "${this.transactionId}" saved successfully`);
   next();

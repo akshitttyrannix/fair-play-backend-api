@@ -53,11 +53,6 @@ const bankSchema = new mongoose.Schema({
   ...timeStampSchema,
 });
 
-bankSchema.pre("save", function (next) {
-  console.log(`bank with holder name "${this.holderName}" is being saved`);
-  next();
-});
-
 bankSchema.post("save", function (doc, next) {
   console.log(`bank with holder name "${this.holderName}" saved successfully`);
   next();
